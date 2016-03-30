@@ -10,7 +10,7 @@
 
 > $ npm install -g bower
 
-5.设置npm registry地址，因为此框架属于公司内部项目，所以源码放在前端搭建的私有npm服务器里
+5.设置npm registry地址
 
 > $ npm set registry http://172.18.7.20:4873
 
@@ -31,7 +31,7 @@
 添加两类配置文件：config.json和chart\chart.json，参考报表前端框架设计中的项目配置说明
 3.生成项目
 
-> $ yo @zjh/dolphinchart
+> $ yo @zl/dolphinchart
 
 4.安装依赖
 进入生成的项目文件夹(里面包含一个package.json文件),执行

@@ -1,4 +1,4 @@
-# 报表框架
+# chart admin
 
 1.安装nodeJS下载
 2.安装SASS下载,注意要先装ruby
@@ -19,7 +19,7 @@
 > $ npm install -g @zl/generator-dolphinchart
 
 
-新建项目
+## 新建项目
 
 1.创建项目目录，并进入
 
@@ -51,8 +51,7 @@
 访问页面http://localhost:8080/src/#/login 用户名/密码：admin/123456 
 注意这个用户名和密码只是展示用的假账户,实际应用中需要server端作真正的校验，然后可以将项目文件中的login.js删掉，并将server.js里两处TODO下面的一行代码删除
 
-编辑
-为已有项目新增chart
+## 为已有项目新增chart
 
 1.将新建的配置文件(如：stability.json)加入到chart文件夹下面
 2.在项目文件目录下执行
@@ -66,7 +65,7 @@ $ yo @zl/dolphinchart:chart stability
 
 ### server需要返回的数据格式：
 （参考：http://www.highcharts.com/demo/combo）
-
+```javascript
 {
   "appName": "SampleApp",//项目名称
   "defaultState": "translation-tool.translation",//登录成功后的跳转页面
@@ -76,7 +75,10 @@ $ yo @zl/dolphinchart:chart stability
   "developmentBaseUrl": "/admin", //development环境下所有API的前缀
   "developmentDomain": "http://172.16.77.30", //development环境下API的domain
 }
+```
+
 图表层，主要是图表相关配置项，如下：
+```javascript
 {
   "moduleName": "A", //该model所属模块，实际上会生成A目录，该目录下放属于该模块的所有model相关代码
   "modelName": "stability", //chart名称
@@ -105,10 +107,14 @@ $ yo @zl/dolphinchart:chart stability
     }
   ]
 }
+```
 charts里每个对象的格式都可以参考highchart的调用参数，目前支持line,bar,pie三种类型
 filters过滤查询支持联动下拉cascade-dropdown，非联动下拉multi-dropdown，输入框input，日期datepicker，日期范围datepicker-range，五种类型的任意组合，一般datepicker和datepicker-range只需一个，查询字符串的格式为
+```javascript
 q:{"filters":[{"name":"category","op":"eq","val":10},{"name":"date","op":">=","val":"2015-03-23"},{"name":"date","op":"<=","val":"2015-04-13"}]}
+```
 server端需要返回的数据格式为
+```javascript
 {
     "status": 0, 
     "msg": "", 
@@ -352,6 +358,5 @@ server端需要返回的数据格式为
         }
     }
 }
-q={"filters":[{"name":"lc","op":"eq","val":"en_US"},{"name":"date","op":">=","val":"2015-12-13"},{"name":"date","op":"<=","val":"2015-12-14"},{"name":"statid","op":"eq","val":"65536"}]}
+```
 
-{"filters":[{"name":"lc","op":"eq","val":"en_US"},{"name":"statid","op":"eq","val":"65536"},{"name":"date","op":">=","val":"2015-12-13"},{"name":"date","op":"<=","val":"2015-12-14"}]}

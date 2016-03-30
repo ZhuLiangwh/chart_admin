@@ -2,7 +2,7 @@
   "name": "Dolphin Admin Lib",
   "version": "1.0.0",
   "authors": [
-    "jhzhang <jhzhang@bainainfo.com>"
+    "liangzhu <liangzhu@bainainfo.com>"
   ],
   "description": "It contains third party dependencies",
   "main": "index.html",

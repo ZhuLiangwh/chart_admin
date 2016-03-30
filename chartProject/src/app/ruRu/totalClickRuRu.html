@@ -1,0 +1,40 @@
+<div class="chart">
+    <div class="data-loading" ng-show="isLoading"></div>
+    <div class="chart-head clearfix" style="margin-bottom:16px;">
+        
+        
+        
+        
+        
+        
+        <div class="list-datepicker left">
+            <div class="date-selected">
+                <span class="input-group date-picker-select">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="datePickerSingle.dt" max-date="datePickerSingle.max" is-open="datePickerSingle.opened" show-button-bar="false" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openSingleDate($event, datePickerSingle)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+    <div class="chart-content">
+        
+        
+        <div class="widget-box">
+            <div class="widget-title" ng-click="isCollapse0 = !isCollapse0">
+                <span class="icon"><i class="glyphicon glyphicon-align-justify"></i></span>
+                <h5>Locale total click</h5>
+            </div>
+            <div class="widget-content" collapse="isCollapse0">
+                <dp-highchart chart-config="chartConfig0"></dp-highchart>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "name": "@zl/generator-dolphinchart",
+  "version": "0.0.22",
+  "description": "生成一个独立的chart项目，拥有登录界面。",
+  "license": "",
+  "main": "generators/app/index.js",
+  "author": {
+    "name": "liangzhu",
+    "email": "liangzhu@bainainfo.com"
+  },
+  "keywords": [],
+  "dependencies": {
+    "chalk": "~0.5.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-jsbeautifier": "^0.2.7",
+    "mocha": "*",
+    "yeoman-generator": "~0.17.1",
+    "yosay": "^0.3.0",
+    "promise": "^6.0.0"
+  },
+  "publishConfig": {
+    "scope": "@dolphin",
+    "registry": "http://172.18.7.20:4873/"
+  },
+  "_id": "@zl/generator-dolphinchart@0.0.22",
+  "scripts": {},
+  "_shasum": "6ae57365b909886d433e15aec6443e2ef4757337",
+  "_from": "@zl/generator-dolphinchart@*",
+  "_npmVersion": "2.7.3",
+  "_nodeVersion": "0.12.1",
+  "_npmUser": {},
+  "dist": {
+    "shasum": "6ae57365b909886d433e15aec6443e2ef4757337",
+    "tarball": "http://172.18.7.20:4873/@zl%2fgenerator-dolphinchart/-/generator-dolphinchart-0.0.22.tgz"
+  },
+  "_resolved": "http://172.18.7.20:4873/@zl%2fgenerator-dolphinchart/-/generator-dolphinchart-0.0.22.tgz",
+  "readme": "ERROR: No README data found!"
+}

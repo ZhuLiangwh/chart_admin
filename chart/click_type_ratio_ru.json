@@ -1,0 +1,19 @@
+{
+    "moduleName": "ru_ru",
+    "modelName": "click_type_ratio_ru_ru",
+    "filters": ["multi-dropdown","datepicker"],
+    "charts": [
+        {
+            "title":{
+                "text":"Version Distribution(Pie Chart)"
+            },
+            "type": "pie",
+            "series": [
+                {
+                    "index": 1,
+                    "name": "share"
+                }
+            ]
+        }
+    ]
+}

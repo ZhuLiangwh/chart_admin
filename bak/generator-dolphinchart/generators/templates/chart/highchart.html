@@ -1,0 +1,73 @@
+<div class="chart">
+    <div class="data-loading" ng-show="isLoading"></div>
+    <div class="chart-head clearfix" style="margin-bottom:16px;">
+        <% if(filters){%>
+        <% _.forEach(filters,function(filter){ %>
+        <% if(filter =='cascade-dropdown'){ %>
+        <cascade-dropdown selected-model="cascadeSelectOptions" select-name="cascadeSelectName" on-selected="filter(node, isInit)"></cascade-dropdown>
+        <% } %>
+        <% if(filter =='multi-dropdown'){ %>
+        <dp-multi-dropdown selected-model="multiSelectOptions" on-selected="filter(node, isInit)"></dp-multi-dropdown>
+        <% } %>
+        <% if(filter =='input'){ %>
+        <div class="search-wrap left">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="text" ng-model="search.string">
+                    <span class="glyphicon glyphicon-search form-control-feedback" ng-disabled="isLoading" ng-click="goSearch()"></span>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <% if(filter == "datepicker"){ %>
+        <div class="list-datepicker left">
+            <div class="date-selected">
+                <span class="input-group date-picker-select">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="datePickerSingle.dt" max-date="datePickerSingle.max" is-open="datePickerSingle.opened" show-button-bar="false" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openSingleDate($event, datePickerSingle)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <% } %>
+        <% if(filter =='datepicker-range'){ %>
+        <div class="list-datepicker left">
+            <div class="date-selected">
+                <span class="input-group date-picker-select">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="datePicker.start.dt" max-date="datePicker.end.dt" is-open="datePicker.start.opened" show-button-bar="false" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, datePicker.start)" ng-disabled="datePicker.end.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </span>
+                <label class="date-picker-text">—</label>
+                <span class="input-group date-picker-select end-date">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="datePicker.end.dt" min-date="datePicker.start.dt" max-date="datePicker.end.max" is-open="datePicker.end.opened" show-button-bar="false" readonly/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event, datePicker.end)" ng-disabled="datePicker.start.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <% } %>
+        <% }) %>
+        <% } %>
+    </div>
+    <div class="chart-content">
+        <% _.forEach(charts, function(chart, index){ %>
+        <% if(chart.type === 'table'){ %>
+        <dp-tablechart config="chartConfig<%= index %>"></dp-tablechart>
+        <% }else{ %>
+        <div class="widget-box">
+            <div class="widget-title" ng-click="isCollapse<%= index %> = !isCollapse<%= index %>">
+                <span class="icon"><i class="glyphicon glyphicon-align-justify"></i></span>
+                <h5><%= chart.title.text %></h5>
+            </div>
+            <div class="widget-content" collapse="isCollapse<%= index %>">
+                <dp-highchart chart-config="chartConfig<%= index %>"></dp-highchart>
+            </div>
+        </div>
+        <% } %>
+        <% }); %>
+    </div>
+</div>

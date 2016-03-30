@@ -1,0 +1,21 @@
+{
+    "moduleName": "ru_ru",
+    "modelName": "total_click_ru_ru",
+    "apiName": "news",
+    "filters": ["datepicker"],
+    "charts": [
+        {
+            "type": "line",
+            "title":{
+                "text":"Locale total click",
+                "x":-20
+            },
+            "series": [
+                {
+                    "index": 1,
+                    "name": "Locale total click"
+                }
+            ]
+        }
+    ]
+}

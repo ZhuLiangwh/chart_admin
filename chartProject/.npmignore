@@ -1,0 +1,12 @@
+.idea/
+.sass-cache
+node_modules
+build
+
+src/vendor
+src/testData
+src/css/app.css
+src/css/maps
+
+
+
